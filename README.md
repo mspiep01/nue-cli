@@ -36,12 +36,6 @@ A command-line interface for interacting with the Nue Self-Service API.
    npm run link
    ```
 
-### Global Installation
-
-```bash
-npm install -g nue-cli
-```
-
 ## Configuration
 
 ### Set API Keys
