@@ -148,13 +148,13 @@ nue platform export --object-type product --wait
 nue platform export --object-type subscription --customer-id "001xx000003DIloAAG" --wait
 
 # Import metadata
-nue platform import --object-type product --file products.json --wait
+nue platform import --object-type product --file products.jsonl --wait
 
 # Query metadata with GraphQL (requires correct endpoint configuration)
 nue platform query --query "{ product { id name status } }"
 
 # Query metadata with variables
-nue platform query --query "query GetProducts($status: String) { product(status: $status) { id name } }" --variables '{"status": "active"}'
+nue platform query --query 'query { Order(where: {id: {_eq: "801VA00000MfxE6YAJ"}}) { id orderNumber status } }'query Product($status: String) { product(status: $status) { id name } }" --variables '{"status": "active"}'
 ```
 
 **Note**: Platform queries require GraphQL syntax, not SOQL. The platform API uses GraphQL for metadata operations. 
@@ -181,7 +181,7 @@ nue query usage --subscription-id a48VA000000OifvYAC
 
 # Legacy export/import commands
 nue export product --wait
-nue import product products.json --wait
+nue import product products.jsonl --wait
 ```
 
 ## Command Reference
