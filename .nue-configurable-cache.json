@@ -1,0 +1,156 @@
+{
+  "hash": "51f27558df131d20bbfbc2193de4409f",
+  "timestamp": 1754367478798,
+  "commands": {
+    "create-order": {
+      "description": "Create a new order in the Nue platform",
+      "category": "orders",
+      "arguments": [],
+      "options": {
+        "common": true,
+        "file": true,
+        "activation": true
+      },
+      "examples": [
+        "nue create-order --file order.json",
+        "nue create-order --json '{\"customer\": {...}}' --auto-activate"
+      ]
+    },
+    "activate-order": {
+      "description": "Activate an existing order",
+      "category": "orders",
+      "arguments": [
+        "orderId"
+      ],
+      "options": {
+        "common": true,
+        "activation": true
+      },
+      "examples": [
+        "nue activate-order order-123",
+        "nue activate-order order-123 --generate-invoice --activate-invoice"
+      ]
+    },
+    "create-change-order": {
+      "description": "Create a new change order",
+      "category": "orders",
+      "arguments": [],
+      "options": {
+        "common": true,
+        "file": true,
+        "activation": true
+      },
+      "examples": [
+        "nue create-change-order --file change-order.json",
+        "nue create-change-order --json '{\"subscription\": {...}}' --auto-activate"
+      ]
+    },
+    "activate-change-order": {
+      "description": "Activate an existing change order",
+      "category": "orders",
+      "arguments": [
+        "changeOrderId"
+      ],
+      "options": {
+        "common": true,
+        "activation": true
+      },
+      "examples": [
+        "nue activate-change-order change-order-123",
+        "nue activate-change-order change-order-123 --generate-invoice"
+      ]
+    },
+    "export-data": {
+      "description": "Export data from Nue platform using GraphQL queries",
+      "category": "data",
+      "arguments": [
+        "objectType"
+      ],
+      "options": {
+        "common": true,
+        "file": true,
+        "job": true,
+        "filter": true,
+        "query": true
+      },
+      "examples": [
+        "nue export-data customers",
+        "nue export-data subscriptions --customer-id cust-123 --format csv"
+      ]
+    },
+    "import-data": {
+      "description": "Import data into Nue platform",
+      "category": "data",
+      "arguments": [
+        "objectType",
+        "file"
+      ],
+      "options": {
+        "common": true,
+        "file": true,
+        "job": true,
+        "import": true
+      },
+      "examples": [
+        "nue import-data customers customers.json",
+        "nue import-data subscriptions subs.csv --dry-run --batch-size 500"
+      ]
+    },
+    "query-objects": {
+      "description": "Query objects using GraphQL for immediate data retrieval",
+      "category": "data",
+      "arguments": [
+        "objectType"
+      ],
+      "options": {
+        "common": true,
+        "file": true,
+        "filter": true,
+        "query": true
+      },
+      "examples": [
+        "nue query-objects customers",
+        "nue query-objects subscriptions --query-file query.graphql"
+      ]
+    },
+    "get-subscriptions": {
+      "description": "Query subscriptions via the REST API",
+      "category": "subscriptions",
+      "arguments": [],
+      "options": {
+        "common": true,
+        "file": true,
+        "filter": true
+      },
+      "examples": [
+        "nue get-subscriptions",
+        "nue get-subscriptions --customer-id cust-123 --status active"
+      ]
+    },
+    "upload-usage": {
+      "description": "Upload usage data to the Nue platform",
+      "category": "usage",
+      "arguments": [],
+      "options": {
+        "common": true,
+        "file": true
+      },
+      "examples": [
+        "nue upload-usage --file usage.json",
+        "nue upload-usage --file usage.csv --customer-id cust-123"
+      ]
+    },
+    "set-api-key": {
+      "description": "Set API key for authentication",
+      "category": "config",
+      "arguments": [],
+      "options": {
+        "common": false
+      },
+      "examples": [
+        "nue set-api-key",
+        "nue set-api-key --sandbox"
+      ]
+    }
+  }
+}

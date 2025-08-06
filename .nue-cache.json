@@ -1,0 +1,22 @@
+{
+  "hash": "04ea65a845d27ff151d9dec934cb2248",
+  "timestamp": 1754367478796,
+  "commands": [
+    [
+      "query",
+      {
+        "metadata": {
+          "name": "query",
+          "description": "QueryCommandHandler command",
+          "category": "general",
+          "aliases": [],
+          "options": [],
+          "arguments": [],
+          "examples": [],
+          "dependencies": [],
+          "type": "class"
+        }
+      }
+    ]
+  ]
+}
